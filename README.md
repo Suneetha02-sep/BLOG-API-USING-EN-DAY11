@@ -1,18 +1,18 @@
-# Blog API using Node.js and Express.js
+# Blog API using Node.js and Express.js (MVC Architecture)
 
 ## Project Description
 
-This project is a simple Blog REST API developed using Node.js and Express.js.
+This project is a Blog REST API developed using Node.js and Express.js following MVC Architecture.
 
-The API performs CRUD operations on blog posts and includes:
+The API supports:
 
 * Create Post
 * Read Posts
 * Update Post
 * Delete Post
 * Pagination
-* Validation
-* Middleware Logging
+* Validation Middleware
+* Logging Middleware
 * Error Handling
 * Timestamps
 
@@ -28,23 +28,66 @@ The API was tested using Postman.
 
 ---
 
+# MVC Architecture
+
+This project follows MVC architecture for better code organization and maintainability.
+
+### MVC Components
+
+| Component   | Purpose                |
+| ----------- | ---------------------- |
+| Routes      | API endpoints          |
+| Controllers | Business logic         |
+| Middleware  | Validation and logging |
+| Data        | Temporary data storage |
+
+---
+
 # Project Structure
 
 ```plaintext
 BLOG-API
 │
-├── node_modules
-├── package.json
-├── package-lock.json
+├── controllers
+│   └── postController.js
+│
+├── routes
+│   └── postRoutes.js
+│
+├── middleware
+│   ├── logger.js
+│   └── validatePost.js
+│
+├── data
+│   └── postsData.js
+│
 ├── server.js
-└── README.md
+├── package.json
+├── README.md
+└── .gitignore
 ```
 
 ---
 
 # Installation Steps
 
-## Install Dependencies
+## Step 1: Clone Repository
+
+```bash
+git clone <repository-url>
+```
+
+---
+
+## Step 2: Open Project Folder
+
+```bash
+cd BLOG-API
+```
+
+---
+
+## Step 3: Install Dependencies
 
 ```bash
 npm install
@@ -52,11 +95,32 @@ npm install
 
 ---
 
-## Run Server
+# Dependencies Used
+
+* express
+* nodemon (optional)
+
+---
+
+# Run Project
+
+## Normal Run
 
 ```bash
-node server.js
+npm start
 ```
+
+---
+
+## Development Mode
+
+```bash
+npm run dev
+```
+
+---
+
+# Server
 
 Server runs on:
 
@@ -72,7 +136,7 @@ http://localhost:5000
 | ------ | -------------- | --------------- |
 | GET    | /api/posts     | Get all posts   |
 | GET    | /api/posts/:id | Get single post |
-| POST   | /api/posts     | Create new post |
+| POST   | /api/posts     | Create post     |
 | PUT    | /api/posts/:id | Update post     |
 | DELETE | /api/posts/:id | Delete post     |
 
@@ -125,8 +189,9 @@ GET /api/posts?page=1&limit=5
 * REST API
 * CRUD Operations
 * Pagination
-* Validation
-* Middleware Logging
+* MVC Architecture
+* Validation Middleware
+* Logging Middleware
 * Error Handling
 * Timestamps
 * Postman Testing
